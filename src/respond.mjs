@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import Server from 'next/server';
 import isObject from './is-object.mjs';
 import isValidString from './is-valid-string.mjs';
 import isNumber from './is-number.mjs';
@@ -18,7 +18,7 @@ const respond = async (data, statusCode = DEFAULT_STATUS) => {
     ? statusCode
     : DEFAULT_STATUS;
 
-  return NextResponse.json(response, { status });
+  return Server.NextResponse.json(response, { status });
 
 };
 

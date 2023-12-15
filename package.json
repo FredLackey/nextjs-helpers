@@ -1,11 +1,11 @@
 {
-  "name"       : "nextjs-helpers",
-  "version"    : "0.0.3",
+  "name": "nextjs-helpers",
+  "version": "0.0.4",
   "description": "Convenience utilities for working with NextJS",
-  "type"       : "module",
-  "main"       : "index.mjs",
-  "scripts"    : {
-    "lint"    : "eslint '**/*.mjs'",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "lint": "eslint '**/*.mjs'",
     "lint:fix": "eslint '**/*.mjs' --fix"
   },
   "keywords": [
@@ -18,14 +18,15 @@
     "convenience"
   ],
   "author": {
-    "name" : "Fred Lackey",
+    "name": "Fred Lackey",
     "email": "fred.lackey@gmail.com",
-    "url"  : "http://fredlackey.com"
+    "url": "http://fredlackey.com"
   },
-  "license"        : "Apache-2.0",
+  "license": "Apache-2.0",
   "devDependencies": {
     "eslint": "^8.55.0"
   },
   "dependencies": {
+    "next": "^14.0.4"
   }
 }
