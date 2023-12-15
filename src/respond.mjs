@@ -18,7 +18,7 @@ const respond = async (data, statusCode = DEFAULT_STATUS) => {
     ? statusCode
     : DEFAULT_STATUS;
 
-  return NextResponse.status(status).json(response);
+  return NextResponse.json(response, { status });
 
 };
 
