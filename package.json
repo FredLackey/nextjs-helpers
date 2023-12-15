@@ -1,6 +1,6 @@
 {
   "name"       : "nextjs-helpers",
-  "version"    : "0.0.2",
+  "version"    : "0.0.3",
   "description": "Convenience utilities for working with NextJS",
   "type"       : "module",
   "main"       : "index.mjs",
@@ -27,6 +27,5 @@
     "eslint": "^8.55.0"
   },
   "dependencies": {
-    "next": "14.0.4"
   }
 }
