@@ -13,4 +13,4 @@ const newCode = (totalLength = c.DEFAULTS.CODE.LENGTH, chars = c.DEFAULTS.CODE.C
   return value.join('');
 };
 
-module.exports = newCode;
+export default newCode;
