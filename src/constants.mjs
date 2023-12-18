@@ -1,5 +1,13 @@
 const CLEAR_CODE = 'ACDEFGHJKLMNPRTVWXY0123456789';
 
+// INTERNAL
+export const SALT_OPTION  = 'base64';
+export const HMAC_OPTION  = 'sha1';
+export const DIGEST_OPTION= 'hex';
+export const ENCODE_FORMAT= 'base64';
+export const DECODE_FORMAT= 'ascii';
+export const STRING_HMAC  = 'md5';
+
 export default {
   
   CLEAR_CODE,
@@ -18,6 +26,13 @@ export default {
   EMPTY_GUID: '00000000-0000-0000-0000-000000000000',
   EMPTY_UID : '00000000000000000000000000000000',
 
-  ZERO_DATE: new Date('1970-01-01Z00:00:00:000')
+  ZERO_DATE: new Date('1970-01-01Z00:00:00:000'),
 
+  // INTERNAL
+  SALT_OPTION,
+  HMAC_OPTION,
+  DIGEST_OPTION,
+  ENCODE_FORMAT,
+  DECODE_FORMAT,
+  STRING_HMAC
 };

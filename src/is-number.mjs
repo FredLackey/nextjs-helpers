@@ -1,5 +1,5 @@
 const isNumber = (value) => {
-  return !isNaN(parseFloat(value)) && isFinite(value);
+  return !Number.isNaN(parseFloat(value)) && Number.isFinite(value);
 };
 
 export default isNumber;
