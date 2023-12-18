@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import removePrefix from './remove-prefix.mjs';
 import removeSuffix from './remove-suffix.mjs';
 import isValidString from './is-valid-string.mjs';
