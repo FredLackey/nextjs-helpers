@@ -1,10 +1,19 @@
 import isDate from './is-date.mjs';
 import isNumber from './is-number.mjs';
+import isDigits from './is-digits.mjs';
 
 const addMinutes = (value, quantity) => {
-  return (isDate(value) && isNumber(quantity))
-    ? new Date(value.getTime() + quantity * 60000)
-    : undefined;
+  if (!isDate(value)) {
+    return undefined;
+  }
+  if (!isNumber(quantity) && isDigits(quantity)) {
+    quantity = Number(quantity);
+  }
+  if (!isNumber(quantity)) {
+    return undefined;
+  }
+
+  return new Date(value.getTime() + quantity * 60000);
 };
 
 export default addMinutes;
