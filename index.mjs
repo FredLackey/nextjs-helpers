@@ -50,6 +50,7 @@ import isBoolean from './src/is-boolean.mjs';
 import isCode from './src/is-code.mjs';
 import isDate from './src/is-date.mjs';
 import isDefined from './src/is-defined.mjs';
+import isDeleted from './src/is-deleted.mjs';
 import isDigits from './src/is-digits.mjs';
 import isDirectory from './src/is-directory.mjs';
 import isEmail from './src/is-email.mjs';
@@ -165,6 +166,7 @@ export default {
   isCode,
   isDate,
   isDefined,
+  isDeleted,
   isDigits,
   isDirectory,
   isEmail,
