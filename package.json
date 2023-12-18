@@ -1,6 +1,6 @@
 {
   "name": "nextjs-helpers",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Convenience utilities for working with NextJS",
   "type": "module",
   "main": "index.mjs",
