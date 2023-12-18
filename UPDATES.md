@@ -4,4 +4,4 @@
 
 ## v0.0.13 - Add tests
 
-## v0.0.15 - Remove `node-fetch` dependency
+## v0.0.15-16 - Cleaning up dependencies
