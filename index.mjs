@@ -28,6 +28,8 @@ import getFileSize from './src/get-file-size.mjs';
 import getFiles from './src/get-files.mjs';
 import getFirst from './src/get-first.mjs';
 import getHash from './src/get-hash.mjs';
+import getHeader from './src/get-header.mjs';
+import getHeaders from './src/get-headers.mjs';
 import getId from './src/get-id.mjs';
 import getLast from './src/get-last.mjs';
 import getMax from './src/get-max.mjs';
@@ -144,6 +146,8 @@ export default {
   getFiles,
   getFirst,
   getHash,  
+  getHeader,
+  getHeaders,
   getId,
   getLast,
   getMax,
