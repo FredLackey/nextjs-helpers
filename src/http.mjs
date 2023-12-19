@@ -61,7 +61,7 @@ const doPromise = ({
     .catch(error => console.debug(error));
 };
 
-const doGet = async (url, creds = {}, headers = {}) => {
+export const doGet = async (url, creds = {}, headers = {}) => {
   try {
     const response = await doPromise({ url, creds, headers });
     return response;
@@ -71,7 +71,7 @@ const doGet = async (url, creds = {}, headers = {}) => {
     return null;
   }
 };
-const doPost = async (url, data, creds = {}, headers = {}) => {
+export const doPost = async (url, data, creds = {}, headers = {}) => {
   try {
     const response = await doPromise({
       method: 'POST', url, data, creds, headers,
@@ -83,7 +83,7 @@ const doPost = async (url, data, creds = {}, headers = {}) => {
     return null;
   }
 };
-const doPut = async (url, data, creds = {}, headers = {}) => {
+export const doPut = async (url, data, creds = {}, headers = {}) => {
   try {
     const response = await doPromise({
       method: 'PUT', url, data, creds, headers,
@@ -95,7 +95,7 @@ const doPut = async (url, data, creds = {}, headers = {}) => {
     return null;
   }
 };
-const doDelete = async (url, data, creds = {}, headers = {}) => {
+export const doDelete = async (url, data, creds = {}, headers = {}) => {
   try {
     const response = await doPromise({
       method: 'DELETE', url, data, creds, headers,
@@ -108,7 +108,7 @@ const doDelete = async (url, data, creds = {}, headers = {}) => {
   }
 };
 
-const ping = async (creds = {}, headers = {}) => {
+export const ping = async (creds = {}, headers = {}) => {
   const response = await doGet('/', creds, headers);
   return response || 'FAILURE';
 };

@@ -16,7 +16,7 @@ import fromIsoDate from './src/from-iso-date.mjs';
 import fromJson from './src/from-json.mjs';
 import fromResult from './src/from-result.mjs';
 import getArrayCount from './src/get-array-count.mjs';
-import getBlockDate from './src/get-blockdate';
+import getBlockDate from './src/get-blockdate.mjs';
 import getBody from './src/get-body.mjs';
 import getCommonPath from './src/get-common-path.mjs';
 import getDuration from './src/get-duration.mjs';
@@ -31,6 +31,7 @@ import getHash from './src/get-hash.mjs';
 import getHeader from './src/get-header.mjs';
 import getHeaders from './src/get-headers.mjs';
 import getId from './src/get-id.mjs';
+import getJwt from './src/get-jwt.mjs';
 import getLast from './src/get-last.mjs';
 import getMax from './src/get-max.mjs';
 import getMin from './src/get-min.mjs';
@@ -85,6 +86,7 @@ import newGuid from './src/new-guid.mjs';
 import newSalt from './src/new-salt.mjs';
 import newUid from './src/new-uid.mjs';
 import parseJson from './src/parse-json.mjs';
+import parseJwt from './src/parse-jwt.mjs';
 import print from './src/print.mjs';
 import readLines from './src/read-lines.mjs';
 import removeDeleted from './src/remove-deleted.mjs';
@@ -149,6 +151,7 @@ export default {
   getHeader,
   getHeaders,
   getId,
+  getJwt,
   getLast,
   getMax,
   getMin,
@@ -206,6 +209,7 @@ export default {
   newSalt,
   newUid,
   parseJson,
+  parseJwt,
   print,
   readLines,
   removeDeleted,
