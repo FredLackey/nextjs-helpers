@@ -38,4 +38,4 @@ export default {
   DECODE_FORMAT,
   STRING_HMAC,
   DEFAULTS,
-}
+};
