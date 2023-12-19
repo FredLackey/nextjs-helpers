@@ -36,6 +36,8 @@ import getPads from './src/get-pads.mjs';
 import getSingle from './src/get-single.mjs';
 import getStringSize from './src/get-string-size.mjs';
 import getSubstring from './src/get-substring.mjs';
+import getUrlParam from './src/get-url-param.mjs';
+import getUrlParams from './src/get-url-params.mjs';
 import getVars from './src/get-vars.mjs';
 import hasString from './src/has-string.mjs';
 import hashString from './src/hash-string.mjs';
@@ -151,6 +153,8 @@ export default {
   getStringSize,
   getSubstring,
   getSubString: getSubstring,
+  getUrlParam,
+  getUrlParams,
   getVars,
   hasString,
   hashString,
