@@ -7,17 +7,17 @@ const ENFORCE_EXPIRATION = false;
 
 const parseJwt = (token, secret = '') => {
 
-  const claims = isValidString(token) ? jwt.decode(token) : null;
-  const session = isObject(claims) ? jwt.fromClaims(claims) : null;
-  const verified = (claims && secret) ? jwt.verify(token, secret, IGNORE_EXPIRATION) : null;
-  const isValid = isObject(verified);
+  const claims     = isValidString(token) ? jwt.decode(token) : null;
+  const payload    = isObject(claims) ? jwt.fromClaims(claims) : null;
+  const verified   = (claims && secret) ? jwt.verify(token, secret, IGNORE_EXPIRATION) : null;
+  const isValid    = isObject(verified);
   const notExpired = (claims && secret) ? jwt.verify(token, secret, ENFORCE_EXPIRATION) : null;
-  const isExpired = isValid && !isObject(notExpired);
+  const isExpired  = isValid && !isObject(notExpired);
 
   const result = {
     token: isValidString(token) ? token : null,
     claims,
-    session,
+    payload,
     isValid,
     isExpired
   };
