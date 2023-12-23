@@ -33,6 +33,7 @@ import getHeaders from './src/get-headers.mjs';
 import getId from './src/get-id.mjs';
 import getJwt from './src/get-jwt.mjs';
 import getLast from './src/get-last.mjs';
+import getLatestSemver from './src/get-latest-semver.mjs';
 import getMax from './src/get-max.mjs';
 import getMin from './src/get-min.mjs';
 import getPads from './src/get-pads.mjs';
@@ -71,6 +72,7 @@ import isMatch from './src/is-match.mjs';
 import isNumber from './src/is-number.mjs';
 import isObject from './src/is-object.mjs';
 import isPhoneNumber from './src/is-phone-number.mjs';
+import isSemver from './src/is-semver.mjs';
 import isString from './src/is-string.mjs';
 import isUidFormat from './src/is-uid-format.mjs';
 import isValidArray from './src/is-valid-array.mjs';
@@ -153,6 +155,7 @@ export default {
   getId,
   getJwt,
   getLast,
+  getLatestSemver,
   getMax,
   getMin,
   getPads,
@@ -194,6 +197,7 @@ export default {
   isObject,
   isPhone: isPhoneNumber,
   isPhoneNumber,
+  isSemver,
   isString,
   isUidFormat,
   isValidArray,

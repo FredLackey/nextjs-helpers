@@ -15,3 +15,8 @@
 ## v0.0.19
 
 * improve `addMinutes`  
+
+## v0.0.30 (12/23/2023)
+
+* add `isSemver`
+* add `getLatestSemver`
