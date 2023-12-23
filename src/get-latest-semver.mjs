@@ -62,4 +62,4 @@ const getLatestSemver = values => {
 
 };
 
-module.exports = getLatestSemver;
+export default getLatestSemver;
