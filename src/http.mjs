@@ -33,10 +33,10 @@ const addHeaders = (creds = {}, headers = {}) => {
 
   const result = { 'Content-Type': 'application/json' };
   if (user || pass || password) {
-    result.Authoriation = `Basic ${Buffer.from(`${user}:${pass || password}`).toString('base64')}`;
+    result.Authorization = `Basic ${Buffer.from(`${user}:${pass || password}`).toString('base64')}`;
   }
   if (token) {
-    result.Authoriation = `Bearer ${token}`;
+    result.Authorization = `Bearer ${token}`;
   }
 
   Object.keys(headers)
