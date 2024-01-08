@@ -1,17 +1,22 @@
-# NextJS Helpers (`nextjs-helpers`)
+# ReactJS Helpers (`reactjs-helpers`)  
 
-Convenience utilities for working with NextJS
+Helpful utilities and scripts to make ReactJS projects more legible and easier for the next developer to take over.  
+
+## Current Status
+
+Based on the original [`cleaner-node`](https://www.npmjs.com/package/cleaner-node) project, this package intends to improve readability and maintainability of ReactJS projects by providing a set of utilities and scripts to help with common tasks.  
 
 ## Installation  
 
 ```bash
-npm i nextjs-helpers
-```
-... or ...
-```bash
-npm install --save nextjs-helpers
+npm i reactjs-helpers
 ```
 
+... or ...
+
+```bash
+npm install --save reactjs-helpers
+```
 
 ## Contact  
 
