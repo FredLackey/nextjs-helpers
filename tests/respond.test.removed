@@ -1,0 +1,96 @@
+import { describe, expect, it } from '@jest/globals';
+
+import { respond } from '..';
+
+describe('respond', () => {
+  it('should respond with default status and code when no arguments are provided', async () => {
+    const response = await respond();
+    
+    expect(response).toEqual({
+      data: undefined,
+      status: undefined,
+    });
+  });
+
+  it('should respond with the provided data and status code', async () => {
+    const data = { message: 'Success' };
+    const statusCode = 201;
+    const httpStatusCode = 200;
+
+    const response = await respond(data, httpStatusCode, statusCode);
+    
+    expect(response).toEqual({
+      data,
+      status: statusCode,
+    });
+  });
+
+  it('should respond with the provided data and default HTTP status', async () => {
+    const data = { message: 'Data without explicit status code' };
+
+    const response = await respond(data);
+    
+    expect(response).toEqual({
+      data,
+      status: undefined,
+    });
+  });
+
+  it('should handle non-object data and set it as a message', async () => {
+    const data = 'Some error message';
+
+    const response = await respond(data);
+    
+    expect(response).toEqual({
+      message: data,
+      status: undefined,
+    });
+  });
+
+  it('should handle valid arrays as data', async () => {
+    const data = [1, 2, 3];
+
+    const response = await respond(data);
+    
+    expect(response).toEqual({
+      data,
+      status: undefined,
+    });
+  });
+
+  it('should handle invalid arrays as data and set them as a message', async () => {
+    const data = 'Invalid array data';
+
+    const response = await respond(data);
+    
+    expect(response).toEqual({
+      message: data,
+      status: undefined,
+    });
+  });
+
+  it('should handle numeric status codes correctly', async () => {
+    const data = 'Numeric status code';
+    const statusCode = 500;
+    const httpStatusCode = 200;
+
+    const response = await respond(data, httpStatusCode, statusCode);
+    
+    expect(response).toEqual({
+      message: data,
+      status: statusCode,
+    });
+  });
+
+  it('should handle numeric HTTP status codes correctly', async () => {
+    const data = 'Numeric HTTP status code';
+    const httpStatusCode = 404;
+
+    const response = await respond(data, httpStatusCode);
+    
+    expect(response).toEqual({
+      message: data,
+      status: httpStatusCode,
+    });
+  });
+});
