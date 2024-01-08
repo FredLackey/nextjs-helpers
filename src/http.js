@@ -2,6 +2,7 @@ import removePrefix from './remove-prefix';
 import removeSuffix from './remove-suffix';
 import isValidString from './is-valid-string';
 import isObject from './is-object';
+import copyObject from './copy-object';
 import { Buffer } from "buffer";
 
 const IS_EMPTY_STRING_OKAY = true;
@@ -49,6 +50,17 @@ const addHeaders = (creds = {}, headers = {}) => {
   return result;
 };
 
+const unData = body => {
+  if (!isObject(body)) { 
+    return body;
+  }
+  let response = copyObject(body);
+  while (response?.data) {
+    response = response.data;
+  }
+  return response;
+};
+
 const doPromise = async ({ method = 'GET', url, data, creds = {}, headers = {} }) => {
   
   url = toUrl(url);
@@ -63,11 +75,7 @@ const doPromise = async ({ method = 'GET', url, data, creds = {}, headers = {} }
     const status = response.status;
     const ok     = status >= 200 && status < 300;
     const error  = ok ? null : json;
-    const body   = !ok 
-      ? null 
-      : json.data
-        ? {...json.data}
-        : json;
+    const body   = ok ? unData(json) : null;
 
     return {
       ok,
