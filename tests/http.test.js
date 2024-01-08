@@ -4,10 +4,15 @@ import { http } from '../';
 
 const URL = 'https://jsonplaceholder.typicode.com/todos/1';
 const GET_RESPONSE = {
-  userId: 1,
-  id: 1,
-  title: 'delectus aut autem',
-  completed: false
+  data: {
+    completed: false,
+    id: 1,
+    title: 'delectus aut autem',
+    userId: 1,
+  },
+  error: null,
+  ok: true,
+  status: 200
 };
 
 test('get http response', async () => {

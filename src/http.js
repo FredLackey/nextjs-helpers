@@ -9,12 +9,12 @@ const IS_EMPTY_STRING_OKAY = true;
 const toUrl = (value = '/') => {
 
   let url = value;
-  url = removePrefix(url, '/');
-  url = removeSuffix(url, '/');
+      url = removePrefix(url, '/');
+      url = removeSuffix(url, '/');
 
   return url.toLowerCase().startsWith('http')
     ? url
-    : `http://${url}`;
+    :   `http://${url}`;
 };
 const toBody = value => {
   if (isObject(value)) {
@@ -49,17 +49,37 @@ const addHeaders = (creds = {}, headers = {}) => {
   return result;
 };
 
-const doPromise = ({
-  method = 'GET', url, data, creds = {}, headers = {},
-}) => {
-  return fetch(toUrl(url), {
-    // credentials: 'same-origin', // 'include', default: 'omit'
-    method,
-    body   : toBody(data),
-    headers: addHeaders(creds, headers),
-  })
-    .then(response => response.json())
-    .catch(error => console.debug(error));
+const doPromise = async ({ method = 'GET', url, data, creds = {}, headers = {} }) => {
+  
+  url = toUrl(url);
+
+  try {
+    const response = await fetch(url, {
+      method,
+      body   : toBody(data),
+      headers: addHeaders(creds, headers),
+    });
+    const json   = await response.json();
+    const status = response.status;
+    const ok     = status >= 200 && status < 300;
+    const body   = ok ? json : null;
+    const error  = ok ? null : json;
+    return {
+      ok,
+      status,
+      data: body,
+      error
+    };
+  } catch (ex) {
+    return {
+      ok    : false,
+      status: -1,
+      data  : null,
+      error : `Failure calling ${url}`,
+      debug : ex
+    };
+  }
+
 };
 
 export const doGet = async (url, creds = {}, headers = {}) => {
