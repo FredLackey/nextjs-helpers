@@ -62,8 +62,13 @@ const doPromise = async ({ method = 'GET', url, data, creds = {}, headers = {} }
     const json   = await response.json();
     const status = response.status;
     const ok     = status >= 200 && status < 300;
-    const body   = ok ? json : null;
     const error  = ok ? null : json;
+    const body   = !ok 
+      ? null 
+      : json.data
+        ? {...json.data}
+        : json;
+
     return {
       ok,
       status,
