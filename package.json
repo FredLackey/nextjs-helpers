@@ -1,6 +1,6 @@
 {
   "name"       : "nextjs-helpers",
-  "version"    : "0.0.34",
+  "version"    : "0.0.35",
   "description": "Helpful utilities and scripts to make NextJS projects more legible and easier for the next developer to take over.",
   "main"       : "index.js",
   "type"       : "module",
