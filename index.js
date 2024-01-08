@@ -36,6 +36,7 @@ import getUrlParams from "./src/get-url-params";
 import hasString from "./src/has-string";
 import hashString from "./src/hash-string";
 import hash from "./src/hash";
+import http from "./src/http";
 import initArray from "./src/init-array";
 import isAlpha from "./src/is-alpha";
 import isAlphanumeric from "./src/is-alphanumeric";
@@ -67,6 +68,7 @@ import isValidChars from "./src/is-valid-chars";
 import isValidPath from "./src/is-valid-path";
 import isValidString from "./src/is-valid-string";
 import isZeroDate from "./src/is-zero-date";
+import jwt from "./src/jwt";
 import moveDown from "./src/move-down";
 import moveObject from "./src/move-object";
 import moveUp from "./src/move-up";
@@ -102,8 +104,14 @@ import uniqueNumbers from "./src/unique-numbers";
 import uniqueObjects from "./src/unique-objects";
 import uniqueStrings from "./src/unique-strings";
 import unique from "./src/unique";
-import http from "./src/http";
-import jwt from "./src/jwt";
+
+import cleanAlphaNumeric from "./src/clean-alphanumeric";
+import getSubString from "./src/get-substring";
+import isAlphaNumeric from "./src/is-alphanumeric";
+import isPhone from "./src/is-phone-number";
+import first from "./src/get-first";
+import last from "./src/get-last";
+import single from "./src/get-single";
 
 const {
   ALPHA,
@@ -123,15 +131,9 @@ const {
   DEFAULTS,
 } = constants;
 
-const {
-  doGet,
-  doPost,
-  doDelete,
-  doPut,
-  ping,
-} = http;
+const { doGet, doPost, doDelete, doPut, ping } = http;
 
-const namedExports = {
+export {
   addMinutes,
   cleanAlphanumeric,
   cleanDigits,
@@ -241,16 +243,17 @@ const namedExports = {
   doDelete,
   doPut,
   ping,
-
+  
   jwt,
+  http,
 
-  cleanAlphaNumeric: cleanAlphanumeric,
-  getSubString     : getSubstring,
-  isAlphaNumeric   : isAlphanumeric,
-  isPhone          : isPhoneNumber,
-  first            : getFirst,
-  last             : getLast,
-  single           : getSingle,
+  cleanAlphaNumeric,
+  getSubString,
+  isAlphaNumeric,
+  isPhone,
+  first,
+  last,
+  single,
 
   ALPHA,
   ALPHANUMERIC,
@@ -269,4 +272,142 @@ const namedExports = {
   DEFAULTS,
 };
 
-export default namedExports;
+
+export default {
+  addMinutes,
+  cleanAlphanumeric,
+  cleanDigits,
+  cleanDto,
+  cleanString,
+  copyObject,
+  fromDto,
+  fromEpoch,
+  fromIsoDate,
+  fromJson,
+  fromResult,
+  getArrayCount,
+  getBlockDate,
+  getBody,
+  getCommonPath,
+  getDuration,
+  getEmail,
+  getEmails,
+  getFileName,
+  getFirst,
+  getHash,
+  getId,
+  getJwt,
+  getLast,
+  getLatestSemver,
+  getMax,
+  getMin,
+  getPads,
+  getReactVersion,
+  getSingle,
+  getStringSize,
+  getSubstring,
+  getUrlParam,
+  getUrlParams,
+  hasString,
+  hashString,
+  hash,
+  initArray,
+  isAlpha,
+  isAlphanumeric,
+  isArray,
+  isAsync,
+  isBoolean,
+  isCode,
+  isDate,
+  isDefined,
+  isDeleted,
+  isDigits,
+  isEmail,
+  isEmpty,
+  isEqual,
+  isFunction,
+  isGuidFormat,
+  isIsoDate,
+  isJson,
+  isMatch,
+  isNumber,
+  isObject,
+  isPhoneNumber,
+  isSameDate,
+  isSemver,
+  isString,
+  isUidFormat,
+  isValidArray,
+  isValidChars,
+  isValidPath,
+  isValidString,
+  isZeroDate,
+  moveDown,
+  moveObject,
+  moveUp,
+  newCode,
+  newGuid,
+  newSalt,
+  newUid,
+  parseJson,
+  parseJwt,
+  print,
+  removeDeleted,
+  removePrefix,
+  removeSuffix,
+  respond,
+  sort,
+  stringify,
+  toAlphanumeric,
+  toBoolean,
+  toCamelCase,
+  toDigits,
+  toEpoch,
+  toGuidFormat,
+  toKebabCase,
+  toResult,
+  toSnakeCase,
+  toTable,
+  toUidFormat,
+  trimArray,
+  trimString,
+  trimToNull,
+  trimToUndefined,
+  uniqueNumbers,
+  uniqueObjects,
+  uniqueStrings,
+  unique,
+  
+  doGet,
+  doPost,
+  doDelete,
+  doPut,
+  ping,
+  
+  jwt,
+  http,
+
+  cleanAlphaNumeric,
+  getSubString,
+  isAlphaNumeric,
+  isPhone,
+  first,
+  last,
+  single,
+
+  ALPHA,
+  ALPHANUMERIC,
+  CLEAR_CODE,
+  DIGITS,
+  ENUM_NAME,
+  EMPTY_GUID,
+  EMPTY_UID,
+  ZERO_DATE,
+  SALT_OPTION,
+  HMAC_OPTION,
+  DIGEST_OPTION,
+  ENCODE_FORMAT,
+  DECODE_FORMAT,
+  STRING_HMAC,
+  DEFAULTS,
+};
